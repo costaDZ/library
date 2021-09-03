@@ -1,0 +1,51 @@
+        
+        <div class="accordion" id="servicesaccordion">
+        
+            <div class="card">
+                <div class="card-header" id="groomingheading">
+                    <h5 class="mb-0">
+                        <a href="#grooming" data-toggle="collapse" aria-expanded="true" aria-controls="grooming">Grooming <i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                    </h5>
+                </div><!-- card header -->
+        
+                <div id="grooming" class="collapse show" data-parent="#servicesaccordion" aria-labelledby="groomingheading">
+                    <div class="card-body">
+                        <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging
+                            skin conditions.</p>
+                    </div>
+                </div><!-- collapse -->
+            </div><!-- card -->
+        
+            <div class="card">
+                <div class="card-header" id="generalhealthheading">
+                    <h5 class="mb-0">
+                        <a href="#generalhealth" class="collapsed" data-toggle="collapse" aria-expanded="false"
+                            aria-controls="generalhealth">General Health <i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                    </h5>
+                </div><!-- card header -->
+        
+                <div id="generalhealth" class="collapse" data-parent="#servicesaccordion"
+                    aria-labelledby="generalhealthheading">
+                    <div class="card-body">
+                        <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general
+                            health services.</p>
+                    </div>
+                </div><!-- card collapse -->
+            </div><!-- card -->
+        
+            <div class="card">
+                <div class="card-header" id="nutritionheading">
+                    <h5 class="mb-0">
+                        <a href="#nutrition" class="collapsed" data-toggle="collapse" aria-expanded="false">Nutrition <i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                    </h5>
+                </div><!-- card header -->
+        
+                <div id="nutrition" class="collapse" data-parent="#servicesaccordion" aria-labelledby="nutritionheading">
+                    <div class="card-body">
+                        <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum
+                            health and disease prevention.</p>
+                    </div>
+                </div><!-- collapse -->
+            </div>card
+        
+        </div>

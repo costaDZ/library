@@ -1,0 +1,30 @@
+//chech the brightness of the bckgroun
+@function checkColor($color) {
+    @if (lightness($color) > 60) {
+        @return $black;
+    } @else if ($color == transparent) {
+        @return $white;
+    } @else {
+        @return $back-light;
+    }
+}
+
+// set back
+@mixin setBack($color, $ok: no) {
+    background-color: $color;
+    color: checkColor($color);
+
+    @if ($ok == hover) {
+        @if ($color == transparent) {
+            &:hover {
+                background-color: checkColor($color);
+                color: $black;
+            }
+        } @else {
+            &:hover {
+                background-color: checkColor($color);
+                color: $color;
+            }
+        }
+    }
+}

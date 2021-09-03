@@ -1,0 +1,24 @@
+
+  const [checked, setChecked] = useState(false);
+    useEffect(() => {
+        setChecked(true);
+    }, []);
+
+
+
+
+
+    <Collapse direction="up" in={checked} mountOnEnter unmountOnExit
+                {...(checked ? { timeout: 2000 } : {})}
+                collapsedHeight={50}
+            >
+              <div className={classes.container}>
+         <Typography variant="h3" className={classes.mainTitle}>
+          Welcome to my <span className={classes.spanColor}>Islend</span>
+         </Typography>
+
+          <IconButton  >
+              <ExpandMoreIcon className={classes.downBtn} />
+          </IconButton>
+                </div>
+          </Collapse>

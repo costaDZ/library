@@ -1,0 +1,24 @@
+const moment = require('moment');
+
+
+
+const reservations = [{
+}];
+
+const reviews = [{
+}];
+
+const dateAvailabilities = [{
+ 	 ...data
+}];
+
+const restaurants = [{
+	... data
+}];
+
+module.exports = {
+    reservations,
+    reviews,
+    dateAvailabilities,
+    restaurants,
+};

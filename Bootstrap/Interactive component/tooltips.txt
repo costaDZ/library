@@ -1,0 +1,14 @@
+/*****HTML**********/
+
+<li class="list-group-item list-group-item-action" data-toggle="tooltip" 
+data-placement="left" title="get 80% offer">
+second class <span class="badge badge-pill badge-success">15</span>
+</li>
+
+
+
+/**********JeQuery*****************/
+
+   $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });

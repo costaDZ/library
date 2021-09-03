@@ -1,0 +1,17 @@
+import firebase from 'firebase/app'
+
+
+export const getRestaurent = async id => {
+
+    const restaurentDoc = await firebase.firestore()
+        .collection('restaurants')
+        .doc(id)
+        .get();
+
+
+    const restaurant = restaurentDoc.data();
+    return {
+        ...restaurant,
+        id,
+    }
+}

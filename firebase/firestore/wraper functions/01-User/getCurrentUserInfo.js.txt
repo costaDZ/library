@@ -1,0 +1,16 @@
+import { getCurrentUser } from '../auth';
+import { getUserInfo } from './getUserInfo';
+
+
+
+// we use it to get the current athenticated user Id (getCurrentUser)
+//and we call the Current User Info function (getUserInfo)
+
+export const getCurrentUserInfo = async () => {
+    const currentUser = getCurrentUser();
+
+    if (!currentUser) return null;
+
+    return await getUserInfo(currentUser.id)
+}
+

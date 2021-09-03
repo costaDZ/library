@@ -1,0 +1,15 @@
+When to use forEach?
+
+.forEach() is great you need to execute a function for each individual element in an array. Good practice is that you should use .forEach() when you can’t use other array methods to accomplish your goal. I know this may sound vague, but .forEach() is a generic tool… only use it when you can’t use a more specialized tool.
+
+When to use map?
+.map() when you want to transform elements in an array.
+
+When to use filter?
+.filter() when you want to select a subset of multiple elements from an array.
+
+When to use find?
+.find() When you want to select a single element from an array.
+
+When to use reduce?
+.reduce() when you want derive a single value from multiple elements in an array.

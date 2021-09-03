@@ -1,0 +1,10 @@
+import { useFonts } from 'expo-font';
+
+  const [loaded] = useFonts({
+    sans_normal: require('./assets/fonts/OpenSans-Regular.ttf'),
+    sans_bold: require('./assets/fonts/OpenSans-Bold.ttf'),
+  });
+
+  if (!loaded) {
+    return null;
+  }

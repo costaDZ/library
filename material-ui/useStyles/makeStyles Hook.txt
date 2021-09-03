@@ -1,0 +1,115 @@
+import { makeStyles } from '@material-ui/core'
+
+
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 60,
+    backgroundColor: 'violet',
+    '&:hover': {
+      background: 'blue'
+    },
+  },
+  title: {
+    textDecoration: 'underline',
+    marginBottom: 20,
+  }
+})
+
+export default function Create() {
+
+  const classes = useStyles();
+
+  return (
+    <Container size="sm">
+      <Typography
+        className={classes.title}
+        variant="h6" 
+        color="textSecondary"
+        component="h2"
+        gutterBottom
+      >
+        Create a New Note
+      </Typography>
+
+      <Button
+        className={classes.btn}
+        type="submit" 
+        color="secondary" 
+        variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}>
+        Submit
+      </Button>
+    </Container>
+  )
+}
+
+
+
+-----------------------------------------------------------------------------------------
+1) we can return an object from makeStyles buy using a callback function 
+and that function can take (theme) as an argument if we want to use it as a property 
+
+const useStyles = makeStyles((theme) => {
+  return {
+    page: {
+      background: '#f9f9f9',
+      width: '100%',
+      padding: theme.spacing(3),
+    },
+    root: {
+      display: 'flex',
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    active: {
+      background: '#f4f4f4'
+    },
+    title: {
+      padding: theme.spacing(2),
+    },
+  }
+})
+************************************************
+2) if we want to pass extra argument that we use in our component ,  
+and the property can take a function and pass to it that arguments 
+
+
+import { makeStyles } from '@material-ui/core'
+
+const useStyles = makeStyles({
+  test: {
+    border: (note) => {
+      if (note.category == 'work') {
+        return '1px solid red'
+      }
+    }
+  }
+})
+
+export default function NoteCard({ note, handleDelete }) {
+  const classes = useStyles(note)
+
+  return (
+    <div>
+      <Card elevation={1} className={classes.test}>
+        <CardHeader
+          action={
+            <IconButton onClick={() => handleDelete(note.id)}>
+              <DeleteOutlined />
+            </IconButton>
+          }
+          title={note.title}
+          subheader={note.category}
+        />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary">
+            { note.details }
+          </Typography>
+        </CardContent>
+      </Card>
+    </div>
+  )

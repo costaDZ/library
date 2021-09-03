@@ -1,0 +1,16 @@
+/*************HTML**************/
+
+<button type="button" class="btn btn-info"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-trigger="hover"
+    title="Standard Checkups"
+    data-content="Out standard checkups offer Ultrasounds, X-rays and dental cleanings">
+    Checkup Info
+  </button>
+
+
+/*************JeQuery******************/
+$(function () {
+  $('[data-toggle="popover"]').popover();
+})

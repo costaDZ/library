@@ -1,0 +1,9 @@
+/******* opacity fo all browsers ********/
+
+@mixin opacity ($value) {
+	zoom : 1;
+	$opacity-ie : $value * 100;
+	filter : alpha(opacity = $opacity-ie);
+        opacity : $value;
+}
+

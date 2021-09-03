@@ -1,0 +1,10 @@
+1) install crome extention
+
+2) change in [store.js] file
+=========>
+ export const configureStore = () =>
+    createStore(
+        persistedReducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__(),
+    );

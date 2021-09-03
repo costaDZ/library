@@ -1,0 +1,10 @@
+git fetch --prune origin
+git reset --hard origin/master
+git clean -f -d
+
+
+
+
+This makes your local repo exactly like your remote repo.
+
+Remember to replace origin and master with the remote and branch that you want to synchronize with.

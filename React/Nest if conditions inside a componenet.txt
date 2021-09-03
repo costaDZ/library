@@ -1,0 +1,28 @@
+<div className="some-container">
+{
+   (() => {
+       if (conditionOne)
+          return <span>One</span>
+       if (conditionTwo)
+          return <span>Two</span>
+       else (conditionOne)
+          return <span>Three</span>
+   })()
+}
+</div>
+
+/------------------------------------------------------------------------------------/
+
+
+{this.state.firstTestValue
+    ? <div >First Title</div>
+    : [
+        this.state.someTestValue
+            ? <div>Second Title</div>
+            : [
+                this.state.thirdValueTest 
+                ? <div>Some Third Title</div> 
+                : <div>Last Title</div>
+            ]
+    ]
+}

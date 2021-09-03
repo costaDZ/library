@@ -1,0 +1,15 @@
+    const [image, setImage] = useState();
+        const [imageUrl, setImageUrl] = useState();
+
+
+
+        useEffect(() => {
+                if (image) {
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                                setImageUrl(reader.result)
+                        }
+                        reader.readAsDataURL(image);
+                }
+
+        }, [image]);

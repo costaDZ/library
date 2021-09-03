@@ -1,0 +1,37 @@
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+const ScreensStackNavigator = createNativeStackNavigator();
+
+export const ScreensNavigator = () => {
+    return (
+        <ScreensStackNavigator.Navigator
+            initialRouteName="CategoryScreen"
+            screenOptions={SharedHeaderOptions}>
+
+            <ScreensStackNavigator.Screen
+                name="TapNavigation"
+                component={TapNavigation}
+            />
+
+            <ScreensStackNavigator.Screen
+                name="CategoryMealScreen"
+                component={CategoryMealsScreen}
+                options={(params) => CategoryMealsScreenOptions(params.route)}
+            />
+
+            <ScreensStackNavigator.Screen
+                name="MealDetails"
+                component={MealDetails}
+                options={{ title: 'MealDetails' }}
+            />
+
+            <ScreensStackNavigator.Screen
+                name="FavoriteMeals"
+                component={FavoriteMeals}
+                options={{ title: 'FavoriteMeals' }}
+            />
+        </ScreensStackNavigator.Navigator>
+    )
+};

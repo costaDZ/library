@@ -1,0 +1,28 @@
+
+@mixin prefixer($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{"-" + $prefix + "-" + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+
+// -webkit-box-shadow: 10px 10px 10px #ccc;
+// -moz-box-shadow: 10px 10px 10px #ccc;
+// -o-box-shadow: 10px 10px 10px #ccc;
+// -ms-box-shadow: 10px 10px 10px #ccc;
+// box-shadow: 10px 10px 10px #ccc;
+
+
+/*/////////////////////*
+/*/////////////////////*
+
+
+/* SCSS */
+@mixin css3-prefix($prop, $value) {
+   -webkit-#{$prop}: #{$value};
+   -moz-#{$prop}: #{$value};
+   -ms-#{$prop}: #{$value};
+   -o-#{$prop}: #{$value};
+   #{$prop}: #{$value};
+}

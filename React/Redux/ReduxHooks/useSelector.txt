@@ -1,0 +1,8 @@
+======> we can use another way to use selectors
+
+import  {useSelectore} from 'react-redux';
+
+
+const product = useSelector((state) => state.product);
+
+

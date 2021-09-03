@@ -1,0 +1,14 @@
+JS : 
+	* prototypes.
+	* inheritence.
+	* closures
+
+css : 
+	* webkit.
+
+math : 
+	* logarithm
+	
+
+
+

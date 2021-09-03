@@ -1,0 +1,38 @@
+import { CREATE_TODO, DELETE_TODO, IS_COMPLETE } from './actions';
+
+
+export const todos = (state = [], actions) => {
+
+    const { type, payload } = actions;
+
+    switch (type) {
+        case CREATE_TODO: {
+            console.log(state);
+            const { text } = payload;
+            const newTodo = {
+                text,
+                isCompleted: false,
+            }
+            return state.concat(newTodo);
+        }
+        case DELETE_TODO: {
+            return state.filter(t => t.text !== payload.text);
+        }
+        case IS_COMPLETE: {
+            const { text } = payload;
+            //   console.log(state);
+            return state.map(item => {
+                console.log(item);
+                if (item.text === text) {
+                    return { ...item, isCompleted: true }
+                }
+                return item;
+            });
+
+        }
+
+        default:
+            return state;
+    }
+
+}

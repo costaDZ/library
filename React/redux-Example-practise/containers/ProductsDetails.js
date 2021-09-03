@@ -1,0 +1,48 @@
+import React from 'react'
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import { removeSelectedProduct } from '../redux/actions/actions';
+
+const ProductsDetails = () => {
+
+    const product = useSelector((state) => state.product);
+    const { image, title, price, category, description } = product;
+
+    console.log(!!product);
+    console.log(product.length);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(removeSelectedProduct())
+    }, []);
+
+    return Object.keys(product).length ?
+        <div className="ui placeholder segment">
+            <div className="ui two column stackable center aligned grid">
+                <div className="ui vertical divider">AND</div>
+                <div className="middle aligned row">
+                    <div className="column lp">
+                        <img className="ui fluid image" src={image} />
+                    </div>
+                    <div className="column rp">
+                        <h1>{title}</h1>
+                        <h2>
+                            <a className="ui teal tag label">${price}</a>
+                        </h2>
+                        <h3 className="ui brown block header">{category}</h3>
+                        <p>{description}</p>
+                        <div className="ui vertical animated button" tabIndex="0">
+                            <div className="hidden content">
+                                <i className="shop icon"></i>
+                            </div>
+                            <div className="visible content">Add to Cart</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> : <h1>Loading ...</h1>;
+}
+
+export default ProductsDetails;

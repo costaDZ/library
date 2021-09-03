@@ -1,0 +1,11 @@
+======> we can use another way to call the action in our component;
+
+import  {useDispatch} from 'react-redux';
+import  {actionName} from './actions';
+
+
+
+const dispatch = useDispatch();
+
+
+dispatch(actionName(id));

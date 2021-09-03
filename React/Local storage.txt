@@ -1,0 +1,17 @@
+
+const getLocalStorage = () => {
+  let localList = localStorage.getItem("list");
+
+  if (localList) {
+    return JSON.parse(localList);
+  } else {
+    return [];
+  }
+}
+
+
+
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(items));
+  }, [items]);

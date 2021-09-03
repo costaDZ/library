@@ -1,0 +1,18 @@
+// we define our (action type) and (action creator)
+
+//(action type)
+export const CREAT_TODO = 'CREAT_TODO';
+//(action creator)
+export const creatTodo = text => ({
+    type: CREAT_TODO,
+    payload: { text },
+})
+
+
+//(action type)
+export const DELETE_TODO = 'CREAT_TODO';
+//(action creator)
+export const deleteTodo = text => ({
+    type: DELETE_TODO,
+    payload: { text },
+});  

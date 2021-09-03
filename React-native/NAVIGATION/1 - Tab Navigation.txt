@@ -1,0 +1,41 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const ScreensTabNavigator = createBottomTabNavigator();
+
+const TapNavigation = () => {
+    return (
+        <ScreensTabNavigator.Navigator
+        >
+            <ScreensTabNavigator.Screen
+                name="Main"
+                component={CategoryScreen}
+                options={{
+                    tabBarIcon: () => <Ionicons
+                        name={'ios-information-circle'}
+                        size={25}
+                        color={"red"}
+                    />,
+                    tabBarActiveTintColor: 'blue',
+                    tabBarInactiveTintColor: 'gray',
+                    headerShown: false,
+                }}
+
+            />
+
+
+            <ScreensTabNavigator.Screen
+                name="Favorites"
+                component={FavoriteMeals}
+                options={{
+                    tabBarIcon: () => <Ionicons
+                        name={'ios-information-circle-outline'}
+                        size={25}
+                        color={"red"}
+                    />,
+                    tabBarActiveTintColor: 'blue',
+                    tabBarInactiveTintColor: 'gray',
+                    tabBarBadge: 6,
+                }}
+            />
+        </ScreensTabNavigator.Navigator>
+    );
+}

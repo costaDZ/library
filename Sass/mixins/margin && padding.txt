@@ -1,0 +1,25 @@
+// margin and padding
+/***********margin and padding**************/
+$space :  (1 , 2 , 3 , 4 , 5);
+@each $spa in $space {
+    // All around margin
+    .m-#{$spa} {
+        margin: #{$spa}rem;
+    }
+
+    // vertical margin
+    .my-#{$spa} {
+        margin: #{$spa}rem 0;
+    }
+
+      // All around margin
+    .p-#{$spa} {
+        padding: #{$spa}rem;
+    }
+
+    // vertical margin
+    .py-#{$spa} {
+        padding: #{$spa}rem 0;
+    }
+}  
+/***********margin and padding**************/

@@ -1,0 +1,66 @@
+import React, { useState, useEffect } from 'react'
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+
+const Members = ({ people }) => {
+
+    const [transfomr, setTransfomr] = useState(-25);
+
+
+    const transformLeft = () => {
+        if (transfomr === (people.length - 1) * -25) {
+            setTransfomr(0)
+        } else {
+            setTransfomr(transfomr - 25)
+        }
+    }
+
+    const transformRight = () => {
+        if (transfomr === 0) {
+            setTransfomr((people.length - 1) * -25)
+        } else {
+            setTransfomr(transfomr + 25)
+        }
+    }
+
+    useEffect(() => {
+        let interval = setInterval(() => {
+            transformLeft()
+        }, 3000);
+        return () => {
+            clearInterval(interval)
+        }
+    }, [transfomr]);
+
+
+
+    return (
+        <>
+            <button className="left-arrow" onClick={transformLeft}>
+                <BsArrowLeft />
+            </button>
+            <section className="slider-container" style={{ transform: `translateX(${transfomr}%)` }}>
+
+                {
+                    people.map(people => {
+                        const { id, image, name, quote, title } = people;
+                        return (
+                            <div className="slider-item" key={id}>
+                                <img src={image} alt={name} />
+                                <h3>{name}</h3>
+                                <h4>{title}</h4>
+                                <p>{quote}</p>
+                            </div>
+                        )
+                    })
+                }
+
+            </section>
+            <button className="right-arrow" onClick={transformRight}>
+                <BsArrowRight />
+            </button>
+        </>
+    )
+}
+
+
+export default Members

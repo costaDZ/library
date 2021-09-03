@@ -1,0 +1,23 @@
+
+.contact form input:not([type="submit"]):focus ,
+.contact form textarea:focus {
+    border:  2px solid  var(--main-color);
+    outline: none;
+}
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder,
+.contact form textarea:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+/*for FireFox and Internet Explorer*/
+.contact form input:not([type="submit"]):focus::-ms-input-placeholder,
+.contact form textarea:focus::-ms-input-placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+
+.contact form input:not([type="submit"]):focus::placeholder,
+.contact form textarea:focus::placeholder {
+    opacity: 0;
+    transition: .3s;
+}

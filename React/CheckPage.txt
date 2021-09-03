@@ -1,0 +1,18 @@
+    // const checkPage = () => {
+    //     let currentLocation = location.pathname.toLowerCase();
+    //     let navLinks = [...containerRef.current.children];
+
+    //     navLinks.map(nav => {
+    //         let currentTarget = nav.innerText.toLowerCase();
+
+    //         if (currentLocation.slice(1) === currentTarget) {
+    //             nav.style.cssText = "border-bottom: 2px solid #02be6e";
+    //         } else {
+    //             nav.style.cssText = "border-bottom: none";
+    //         }
+    //     })
+    // }
+
+    // useEffect(() => {
+    //     checkPage();
+    // }, [location]);

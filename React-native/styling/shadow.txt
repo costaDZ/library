@@ -1,0 +1,8 @@
+         ** just in IOS
+        // shadowColor: "black",
+        // shadowOffset: { width: 0, height: 2 },
+        // shadowRadius: 6,
+        // shadowOpacity: 0.6,
+
+        ** in ANDROID
+        elevation: 5,

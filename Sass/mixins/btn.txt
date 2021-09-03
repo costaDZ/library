@@ -1,0 +1,14 @@
+//========================//
+// btn
+//========================//
+@mixin btn($height: 2.5rem, $radius: 2px, $border: 1px solid $black) {
+    display: block;
+    height: $height;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: $radius;
+    border: $border;
+    transition: ease-in-out 0.3s;
+    padding: 0 20px;
+    letter-spacing: 1.5px;
+}

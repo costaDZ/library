@@ -1,0 +1,157 @@
+/*==============================HTML==============================*/         
+<div class="discover">
+                        <div class="style-one item">
+                            <!--first style-->
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men1.webp" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts-Graphic</p>
+                                <pre class="price">£30.00   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <div class="style-three item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men2.webp" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts-Graphic</p>
+                                <pre class="price">£30.00   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <!--second style-->
+
+                        <div class="style-foor item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men3.webp" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts-Graphic</p>
+                                <pre class="price">£30.00   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+
+                        <div class="style-foor item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men3.webp" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts-Graphic</p>
+                                <pre class="price">£30.00   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <!--therd style-->
+
+                        <div class="style-five item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men04.webp" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts-Graphic</p>
+                                <pre class="price">£30.00   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <!--fourth style-->
+
+                    </div>
+
+                    <!--image changer-->
+                    <div class="image">
+                        <img src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/mens-cat-img.jpg"
+                            alt="">
+                    </div>
+                </div>
+                <div class="changer">
+                    <i class="fas fa-long-arrow-alt-left arrow"></i>
+                    <span class="bullet active"></span>
+                    <span class="bullet"></span>
+                    <span class="bullet"></span>
+                    <span class="bullet"></span>
+                    <i class="fas fa-long-arrow-alt-right arrow"></i>
+                </div>
+            </section>
+
+
+
+
+/======================JAVASCRIPT=======================/
+const arrows = document.querySelectorAll(".arrow");
+/// select items
+const imageItems = document.querySelectorAll(".item");
+///selet bullets
+const bullets = document.querySelectorAll(".bullet");
+
+//let position = 0;
+let getBullet = 0;
+
+// add gay color to an arrow when loading the document
+if (getBullet === 0) {
+    arrows[1].style.color = "gray";
+}
+
+//=========> set the events to my arrows
+arrows.forEach(arrow => {
+    arrow.addEventListener("click", () => {
+        if (arrow.classList.contains("fa-long-arrow-alt-right")) {
+            changeTheItem(0);
+        } else {
+            changeTheItem(3);
+        }
+    });
+});
+
+//==========> add events to bullets
+bullets.forEach(b => {
+    b.addEventListener("click", () => { hoverbullet(b) });
+});
+
+/// helper function t active the target bullet
+function hoverbullet(b) {
+    //get the index of the current bullet
+    getBullet = [...bullets].indexOf(b);
+    // change the position
+    changeTheItem(getBullet);
+    // clear all the color of the bullet
+    clearBullets(getBullet);
+    // change the number of the posotion 
+    checkPosition(getBullet)
+}
+
+// function to chnge items
+function changeTheItem(position) {
+    // chek the position
+    if (getBullet !== position) {
+        position === 0 ? getBullet -= 1 : getBullet += 1;
+    }
+    imageItems.forEach(img => {
+        img.style.transform = `translateX(${getBullet * (-200)}%)`;
+    });
+    // call the helper functions
+    clearBullets(getBullet);
+    checkPosition(getBullet);
+}
+
+/// hlper function to clear all the bullets
+function clearBullets(target) {
+    bullets.forEach(b => {
+        b.classList.remove("active");
+    });
+    // active the target bullet
+    [...bullets][target].classList.add("active");
+}
+
+/// helper function to check the position
+function checkPosition(pos) {
+    if (pos === 3) {
+        arrows[0].style.color = "gray";
+        arrows[1].removeAttribute("style");
+
+    } else if (pos === 0) {
+        arrows[1].style.color = "gray";
+        arrows[0].removeAttribute("style");
+
+    } else {
+        arrows[0].removeAttribute("style");
+        arrows[1].removeAttribute("style");
+    }
+}

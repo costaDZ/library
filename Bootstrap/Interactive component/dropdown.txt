@@ -1,0 +1,20 @@
+
+  <div class="btn-group mb-3">
+    <button type="button" class="btn btn-primary">Services</button>
+    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+      type="button" id="dropdownMenuButton"
+      data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-header">Service Options</div>
+      <a class="dropdown-item" href="#">Grooming</a>
+      <a class="dropdown-item" href="#">General Health</a>
+      <a class="dropdown-item" href="#">Nutrition</a>
+      <a class="dropdown-item" href="#">Pest Control</a>
+      <a class="dropdown-item" href="#">Vaccinations</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Other</a>
+    </div>
+  </div>

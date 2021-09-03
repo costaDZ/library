@@ -1,0 +1,43 @@
+1- we use (createMuiTheme) and (ThemeProvider) in [app.js]
+2- for font we import the font from google font in [index.css] and we use it in our function
+3- we search about "default theme" in M-UI to get deferent objects proprties
+4- to get colors we serach about "color"
+------------------------------------------------------------
+import { createMuiTheme, ThemeProvider } from '@material-ui/core'
+
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#fefefe'
+    },
+    secondary: purple
+  },
+  typography: {
+    fontFamily: 'Quicksand',
+    fontWeightLight: 400,
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 700,
+  }
+})
+
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Notes />
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+export default App;

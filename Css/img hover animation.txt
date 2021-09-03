@@ -1,0 +1,72 @@
+  <div className="works-container">
+                    <div className="work-item">
+                        <img src={work_one} alt="work_one" />
+                        <div class="overlay-msg">Add to chart</div>
+                    </div>
+                    <div className="work-item">
+
+                        <img src={work_there} alt="work_one" />
+                        <div class="overlay-msg">Add to chart</div>
+                    </div>
+                    <div className="work-item">
+
+                        <img src={work_two} alt="work_one" />
+                        <div class="overlay-msg">Add to chart</div>
+                    </div>
+                    <div className="work-item">
+
+                        <img src={work_one} alt="work_one" />
+                        <div class="overlay-msg">Add to chart</div>
+                    </div>
+                    <div className="work-item">
+
+                        <img src={work_two} alt="work_one" />
+                        <div class="overlay-msg">Add to chart</div>
+                    </div>
+                    <div className="work-item">
+
+                        <img src={work_there} alt="work_one" />
+                        <div class="overlay-msg">Add to chart</div>
+                    </div>
+</div >
+
+------------------------------------------------------------------
+[scss]
+  .works-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        height: 50vh;
+
+        .work-item {
+            position: relative;
+            text-align: center;
+        }
+
+        .overlay-msg {
+            background-color: rgba(0, 0, 0, 0.227);
+            transition: ease-in-out 0.3s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: 700;
+            color: white;
+            height: 100%;
+            width: 100%;
+            border-radius: 2px;
+            font-size: 0.1em;
+            line-height: 10;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .work-item:hover .overlay-msg {
+            opacity: 1;
+            font-size: 1.2rem;
+        }
+    }

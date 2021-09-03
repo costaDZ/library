@@ -1,0 +1,12 @@
+    const callBackRef = useCallback(
+        (inputElement) => {
+            if (inputElement) {
+                inputElement.focus()
+            }
+        },
+        [],
+    )
+
+
+
+"use ref in the element"

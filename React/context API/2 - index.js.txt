@@ -1,0 +1,20 @@
+import { AppProvider } from './context';
+import { Loading } from './components/tools'
+
+ReactDOM.render(
+  <Suspense fallback={<Loading />}>
+    <AppProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </AppProvider>
+  </Suspense>
+  ,
+  document.getElementById('root')
+);
+
+
+
+Suspense lets The components “wait” for something before they can render like fetching data.
+
+we can use it in any conponent we want .

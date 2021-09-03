@@ -1,0 +1,28 @@
+1) - intall redux react-redux
+
+2) - in [src] we creat store.js
+
+3) - in [index.js] we wrap our app wit ReduxProvider
+
+4) - in [src] we creat (actions.js) file
+
+5) - in [src] we creat (reducers.js) file
+
+5) - in [store.js] we import our function name from (reducers.js)
+
+6) - connecting the components to the Redux Store
+	===> import {connect} from 'react-redux';
+
+	===> import { creatTodo } from './actions';
+
+	===> creat two function sin Our App
+
+		1=> mapStateToProps = state => ({
+			** get the state we need from our intire state
+		})
+
+ 		2=> mapDispatchToProps= dispatch=> ({
+			** (action name): arg => dispatch(creatTodo(arg))
+		})
+
+	===>  export default connect(mapStateToProps , mapDispatchToProps )(NewTodoForm);
